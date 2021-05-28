@@ -28,6 +28,8 @@ Syntax highlighted code block
 [Link](url) and ![Image](src)
 ```
 
+https://tikimojo.com/wp-content/uploads/2021/04/800px-Raspberry_Pi_Logo.svg_.png(src)
+
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ### Jekyll Themes
