@@ -68,7 +68,7 @@ How the SprinklerPi works is it uses cron to run the scripts on a frequent basis
 0 5 * * * /sbin/shutdown -r now # reboot every day at 5am
 ```
  
-#### Web 
+#### Web – what you need on your web server
 
 * assets --> this directory contains the css files and future additions
 * index.html --> the "home page" for the sprinkler controls
