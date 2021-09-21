@@ -18,13 +18,13 @@ The interface for the user to turn on the sprinkler is through the web site form
 
 ### Software
 
-This project requires a number of python and shell scripts on the rPi and HTML + PHP on the web server.  This is all very modular.  If you don't have a camera or temp sensor, you can either leave those scripts off, or simply allow them to fail.  The scripts expect that you are installing under user "pi" and have three folders: control, input and output.  If you use a different user directory or a different directory structure, you'll need to adjust the scripts appropriately.
+This project requires a number of python and shell scripts on the rPi and HTML + PHP on the web server.  This is all very modular.  If you don't have a camera or temp sensor, you can either leave those scripts off, or simply allow them to fail.  The scripts expect that you are installing under user "pi" and have three folders: **control, input and output.**  If you use a different user directory or a different directory structure, you'll need to adjust the scripts appropriately.
 
 #### Raspberry Pi
 
 The shell scripts will need to be set to executable. Sync.sh and upcurl.sh need to be edited to point to your web server address. 
 
-* control
+* **control**
   * check.py --> runs to look for the "turn on" command from the web server, and turn on the sprinkler valve
   * sync.sh --> downloads the command file from the web server
   * upcurl.sh --> uploads the "turn off" command to the web server
@@ -33,11 +33,11 @@ The shell scripts will need to be set to executable. Sync.sh and upcurl.sh need 
   * camera.sh --> takes a photo from the camera and uploads it to the web server
   * rotate.sh --> rotates our cron.log and check.py log files
 
-* input
+* **input**
   * cmd.txt --> contains the commands from the web server
   * on.txt --> status file, tells the check.py script that the sprinkler is currently on
 
-* output
+* **output**
   * log.txt --> log file written by check.py on its activity
   * conditions.txt --> written by grabtemp.py
   * conditions.head, .tail --> template files used for building conditions.html
@@ -46,10 +46,10 @@ The shell scripts will need to be set to executable. Sync.sh and upcurl.sh need 
   * cron-1month.log --> the previous month's cron.log
   * cron-2month.log --> ...and the month before that, just in case you need it.
 
-* test-scripts
+* **test-scripts**
   * A set of scripts that can be used for debugging the hardware as you're getting things set up.  
 
-* local
+* **local**
   * This directory is a Python Flask app that provides two simple buttons for toggling two GPIO ports.  One is an LED and the other is the sprinkler valve.
   * This is not required to run the project, but you may find it handy.  In fact, if you setup your home network to be reachable from the general internet, you could use these two buttons to turn your sprinkler on and off.  Much of the work in this project is to get around the need for home network configuration.
   * This can be run at the command line with "python app.py"
@@ -92,7 +92,7 @@ Currently there's no authentication needed to turn on your sprinkler, it's on th
 
 ## Contact
 
-If you want to contact me you can reach me at stephen.peters@gmail.com.
+If you want to contact me you can reach me at stephen.peters@gmail.com.  Please look for more information at: https://tikimojo.com/sprinklerpi/
 
 ## Contributing to SprinklerPi:
 I am looking forward to people who'd like to expand / refine this project.  Rather than just accept pull requests, I'd like to discuss the next steps to make this even better!  
