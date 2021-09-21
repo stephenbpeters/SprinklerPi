@@ -22,7 +22,7 @@ This project requires a number of python and shell scripts on the rPi and HTML +
 
 #### Raspberry Pi
 
-The shell scripts will need to be set to executable. Sync.sh and upcurl.sh need to be edited to point to your web server address. 
+The shell scripts will need to be set to executable. Sync.sh and upcurl.sh need to be edited to point to your web server address. Please see below for crontab entries.
 
 * **control**
   * check.py --> runs to look for the "turn on" command from the web server, and turn on the sprinkler valve
