@@ -88,7 +88,7 @@ How the SprinklerPi works is it uses cron to run the scripts on a frequent basis
 
 Your web hosting solution may require additional configuration to allow php file uploads, follow their documentation if you run into trouble.  use php-upload.html to help debug problems.
 
-Currently there's no authentication needed to turn on your sprinkler, it's on the list for the future.  For now, if you feel that may be a problem, simply add a .htaccess file to lock out strangers.
+Currently there's no authentication needed to turn on your sprinkler, it's on the list for the future.  For now, if you feel that may be a problem, simply add an .htaccess file to lock out strangers.
 
 ## Contact
 
