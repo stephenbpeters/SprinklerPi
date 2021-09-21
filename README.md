@@ -38,7 +38,7 @@ The shell scripts will need to be set to executable. Sync.sh and upcurl.sh need 
   * on.txt --> status file, tells the check.py script that the sprinkler is currently on
 
 * output
-  * log.txt --> log file written by check.py on it's activity
+  * log.txt --> log file written by check.py on its activity
   * conditions.txt --> written by grabtemp.py
   * conditions.head, .tail --> template files used for building conditions.html
   * camera.jpg --> image from the camera
@@ -47,10 +47,10 @@ The shell scripts will need to be set to executable. Sync.sh and upcurl.sh need 
   * cron-2month.log --> ...and the month before that, just in case you need it.
 
 * test-scripts
-  * A set of scripts that can be used for debugging the hardware as you're getting things set up
+  * A set of scripts that can be used for debugging the hardware as you're getting things set up.  
 
 * local
-  * This directory is a Python Flask app that provides two simple buttons for toggling two GPIO ports.
+  * This directory is a Python Flask app that provides two simple buttons for toggling two GPIO ports.  One is an LED and the other is the sprinkler valve.
   * This is not required to run the project, but you may find it handy.  In fact, if you setup your home network to be reachable from the general internet, you could use these two buttons to turn your sprinkler on and off.  Much of the work in this project is to get around the need for home network configuration.
   * This can be run at the command line with "python app.py"
   * Once the flask app is running, point your web browser at: http://raspberry-pi-ip-address:5000/
@@ -65,13 +65,12 @@ How the SprinklerPi works is it uses cron to run the scripts on a frequent basis
 * * * * * /home/pi/sprinkler/control/conditions.sh >> /home/pi/sprinkler/input/cron.log 2>&1
 * * * * * python /home/pi/sprinkler/control/check.py >> /home/pi/sprinkler/input/cron.log 2>&1
 0 0 1 * * /home/pi/sprinkler/control/rotate.sh >> /home/pi/sprinkler/output/cron.log 2>&1
-0 * * * * /home/pi/sprinkler/control/upcurl-templog.sh >> /home/pi/sprinkler/output/cron.log 2>&1
 0 5 * * * /sbin/shutdown -r now # reboot every day at 5am
 ```
  
 #### Web 
 
-* assets --> contains the css files and future additions
+* assets --> this directory contains the css files and future additions
 * index.html --> the "home page" for the sprinkler controls
 * sprinkler-on.html --> used to turn on the sprinkler 
 * * write-out.php --> takes the user input and writes the cmd.txt file
@@ -79,6 +78,7 @@ How the SprinklerPi works is it uses cron to run the scripts on a frequent basis
 * * write-out-off.php --> writes the off command to cmd.txt
 * upload.php --> used by the rPi curl script to upload the cmd.txt file
 * upload2.php --> used by the rPi curl script to upload the conditions.html and camera.jpg files
+* php-upload.html --> not actually used by the system, but helpful in debugging php file upload issues
 * tosprinklerpi --> directory used for files intended to be picked up by the rPi
 * * cmd.txt --> written by sprinkler-on.php with the "turn on" command 
 * fromsprinklerpi --> directory for files uploaded from the rPi with curl
@@ -86,6 +86,9 @@ How the SprinklerPi works is it uses cron to run the scripts on a frequent basis
 * * camera.jpg --> photo from the USB camera
 * * conditions.html --> page constructed by the rPi with temperature and humidity readings
 
+Your web hosting solution may require additional configuration to allow php file uploads, follow their documentation if you run into trouble.  use php-upload.html to help debug problems.
+
+Currently there's no authentication needed to turn on your sprinkler, it's on the list for the future.  For now, if you feel that may be a problem, simply add a .htaccess file to lock out strangers.
 
 ## Contact
 
