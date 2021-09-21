@@ -1,0 +1,1 @@
+current conditions at 17:21:03.164955 are Temp=69.3*  Humidity=45.7%
