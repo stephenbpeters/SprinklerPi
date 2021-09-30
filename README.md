@@ -57,7 +57,7 @@ The shell scripts will need to be set to executable. Sync.sh and upcurl.sh need 
 
 #### crontab entries
  
-How the SprinklerPi works is it uses cron to run the scripts on a frequent basis to both check for new commands, and push status.  In fact, it's something of ar Rube Goldberg machine (https://en.wikipedia.org/wiki/Rube_Goldberg_machine) in how it functions.  This is intentional as it makes it very modular and easy to add or remove components.  Here are the commands I use in crontab: 
+How the SprinklerPi works is it uses cron to run the scripts on a frequent basis to both check for new commands, and push status.  In fact, it's something of a Rube Goldberg machine (https://en.wikipedia.org/wiki/Rube_Goldberg_machine) in how it functions.  This is intentional as it makes it very modular and easy to add or remove components.  Here are the commands I use in crontab: 
  
 ```
 * * * * * /home/pi/sprinkler/control/sync.sh >> /home/pi/sprinkler/output/cron.log 2>&1
